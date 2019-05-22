@@ -4,6 +4,20 @@ import { HotTable } from "@handsontable/react";
 
 import "handsontable/dist/handsontable.full.css";
 
+function generateData() {
+  const rowCount = 1000;
+  const columnCount = 100;
+  const data = []
+
+  for (let i = 0; i < rowCount; i++) {
+    data[i] = []
+    for (let j = 0; j < columnCount; j++) {
+      data[i].push(`${i}, ${j}, ${Math.random()}`);
+    }
+  }
+  return data
+}
+
 export default class HotApp extends React.Component {
   constructor(props) {
     super(props);
@@ -15,26 +29,20 @@ export default class HotApp extends React.Component {
       ]
     };
   }
-  generateData = () => {
+  clickHandler = () => {
     this.setState({
-      data: [
-        ["2019", 11, 12, 12, 13],
-        ["2020", 20, 11, 14, 13],
-        ["2021", 30, 15, 12, 13]
-      ]
+      data: generateData()
     });
   };
   render() {
     const { data } = this.state;
     return (
       <div>
-        <button onClick={this.generateData}>Random Data</button>
+        <button onClick={this.clickHandler}>Random Data</button>
         <HotTable
           data={data}
           colHeaders={true}
           rowHeaders={true}
-          width="600"
-          height="300"
         />
       </div>
     );
