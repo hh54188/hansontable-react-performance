@@ -18,31 +18,50 @@ function generateData() {
   return data
 }
 
+function generateColumns() {
+  const columnCount = 100;
+  const result = []
+  for (let i = 0; i < columnCount; i++) {
+    result.push({
+      renderer: function(instance, td, row, col, prop, value, cellProperties) {
+        return ReactDOM.render(<span>{value}</span>, td)
+      }
+    })
+  }  
+  return result
+}
+
 export default class HotApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        ["2019", 10, 11, 12, 13],
-        ["2020", 20, 11, 14, 13],
-        ["2021", 30, 15, 12, 13]
-      ]
+      settings: {
+        data: [
+          ["2019", 10, 11, 12, 13],
+          ["2020", 20, 11, 14, 13],
+          ["2021", 30, 15, 12, 13]
+        ],
+        columns: [
+          {}, {}, {}, {}
+        ]
+      }
     };
   }
   clickHandler = () => {
     this.setState({
-      data: generateData()
+      settings: {
+        data: generateData(),
+        columns: generateColumns()
+      } 
     });
   };
   render() {
-    const { data } = this.state;
+    const { settings } = this.state;
     return (
       <div>
         <button onClick={this.clickHandler}>Random Data</button>
         <HotTable
-          data={data}
-          colHeaders={true}
-          rowHeaders={true}
+          settings={settings}
         />
       </div>
     );
