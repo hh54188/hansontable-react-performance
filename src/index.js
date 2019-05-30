@@ -4,9 +4,10 @@ import { HotTable } from "@handsontable/react";
 
 import "handsontable/dist/handsontable.full.css";
 
+const columnCount = 20;
+const rowCount = 9000;
+
 function generateData() {
-  const rowCount = 1000;
-  const columnCount = 100;
   const data = []
 
   for (let i = 0; i < rowCount; i++) {
@@ -19,7 +20,6 @@ function generateData() {
 }
 
 function generateColumns() {
-  const columnCount = 100;
   const result = []
   for (let i = 0; i < columnCount; i++) {
     result.push({
