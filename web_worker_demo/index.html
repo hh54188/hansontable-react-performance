@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onclick="generateObjects()">Generate Objects</button>
+
+    <script>
+      var worker = new Worker("worker.js");
+
+      function generateObjects() {
+        worker.postMessage("Generate Begin");
+
+        setInterval(() => {
+          console.log(Math.random());
+        }, 100);
+
+        // const result = [];
+        // for (let i = 0; i < 10e5 * 3; i++) {
+        //   result.push(new Object());
+        // }
+
+        // console.log(result);
+      }
+
+      // function generateObjects() {
+      //   setInterval(() => {
+      //     console.log(Math.random());
+      //   }, 100);
+
+      //   const result = [];
+      //   for (let i = 0; i < 10e5 * 3; i++) {
+      //     result.push(new Object());
+      //   }
+
+      //   console.log(result);
+      // }
+
+      worker.addEventListener(
+        "message",
+        function(e) {
+          console.log(e.data);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

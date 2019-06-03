@@ -4,31 +4,34 @@ import { HotTable } from "@handsontable/react";
 
 import "handsontable/dist/handsontable.full.css";
 
-const columnCount = 20;
-const rowCount = 9000;
+// const columnCount = 50;
+// const rowCount = 10000;
+
+const columnCount = 100;
+const rowCount = 20000;
 
 function generateData() {
-  const data = []
+  const data = [];
 
   for (let i = 0; i < rowCount; i++) {
-    data[i] = []
+    data[i] = [];
     for (let j = 0; j < columnCount; j++) {
       data[i].push(`${i}, ${j}, ${Math.random()}`);
     }
   }
-  return data
+  return data;
 }
 
 function generateColumns() {
-  const result = []
+  const result = [];
   for (let i = 0; i < columnCount; i++) {
     result.push({
       renderer: function(instance, td, row, col, prop, value, cellProperties) {
-        return ReactDOM.render(<span>{value}</span>, td)
+        return ReactDOM.render(<span>{value}</span>, td);
       }
-    })
-  }  
-  return result
+    });
+  }
+  return result;
 }
 
 export default class HotApp extends React.Component {
@@ -36,33 +39,31 @@ export default class HotApp extends React.Component {
     super(props);
     this.state = {
       settings: {
-        data: [
-          ["2019", 10, 11, 12, 13],
-          ["2020", 20, 11, 14, 13],
-          ["2021", 30, 15, 12, 13]
-        ],
-        columns: [
-          {}, {}, {}, {}
-        ]
+        data: [["2019"]],
+        columns: [{}]
       }
     };
   }
   clickHandler = () => {
-    this.setState({
-      settings: {
-        data: generateData(),
-        columns: generateColumns()
-      } 
-    });
+    this.setState(
+      {
+        settings: {
+          data: generateData(),
+          columns: generateColumns(),
+          autoColumnSize: false,
+          rowHeights: 50,
+          colWidths: 100
+        }
+      },
+      () => {}
+    );
   };
   render() {
     const { settings } = this.state;
     return (
       <div>
         <button onClick={this.clickHandler}>Random Data</button>
-        <HotTable
-          settings={settings}
-        />
+        <HotTable settings={settings} />
       </div>
     );
   }
