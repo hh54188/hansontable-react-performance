@@ -1,3 +1,6 @@
+react-hansontable/hansontable/node_modules
+react-hansontable/hansontable/dist
+react-hansontable/hansontable/es
 node_modules
 *.log
 dist
