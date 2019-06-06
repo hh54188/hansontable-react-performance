@@ -1,9 +1,9 @@
 import React from "react";
-import Handsontable from "../handsontable/dist/handsontable.full";
+import Handsontable from "../handsontable/dist/handsontable";
 import { SettingsMapper } from "./settingsMapper";
 
 /**
- * A Handsontable-ReactJS wrapper.
+ * A Handsontable-ReÒactJS wrapper.
  *
  * To implement, use the `HotTable` tag with properties corresponding to Handsontable options.
  * For example:
