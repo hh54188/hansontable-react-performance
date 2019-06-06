@@ -1,6 +1,7 @@
-react-hansontable/hansontable/node_modules
-react-hansontable/hansontable/dist
-react-hansontable/hansontable/es
+react-handsontable/handsontable/node_modules
+react-handsontable/handsontable/dist
+react-handsontable/handsontable/es
 node_modules
 *.log
 dist
+.DS_Store

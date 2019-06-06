@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import { HotTable } from "@handsontable/react";
-import { HotTable } from "../react-hansontable/src";
+import { HotTable } from "../react-handsontable/src";
 
 import "handsontable/dist/handsontable.full.css";
 
