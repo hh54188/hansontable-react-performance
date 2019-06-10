@@ -1,6 +1,7 @@
 react-handsontable/handsontable/node_modules
 react-handsontable/handsontable/dist
 react-handsontable/handsontable/es
+react-handsontable/handsontable/yarn.lock
 node_modules
 *.log
 dist
