@@ -1,5 +1,5 @@
-import { arrayEach } from './helpers/array';
-import { objectEach } from './helpers/object';
+import { arrayEach } from "./helpers/array";
+import { objectEach } from "./helpers/object";
 
 /**
  * @description
@@ -55,7 +55,7 @@ const REGISTERED_HOOKS = [
    *
    * @event Hooks#afterCellMetaReset
    */
-  'afterCellMetaReset',
+  "afterCellMetaReset",
 
   /**
    * Fired after one or more cells has been changed. The changes are triggered in any situation when the
@@ -77,7 +77,7 @@ const REGISTERED_HOOKS = [
    * })
    * ```
    */
-  'afterChange',
+  "afterChange",
 
   /**
    * Fired by {@link ObserveChanges} plugin after detecting changes in the data source. This hook is fired when
@@ -85,7 +85,7 @@ const REGISTERED_HOOKS = [
    *
    * @event Hooks#afterChangesObserved
    */
-  'afterChangesObserved',
+  "afterChangesObserved",
 
   /**
    * Fired each time user opens {@link ContextMenu} and after setting up the Context Menu's default options. These options are a collection
@@ -94,7 +94,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterContextMenuDefaultOptions
    * @param {Array} predefinedItems An array of objects containing information about the pre-defined Context Menu items.
    */
-  'afterContextMenuDefaultOptions',
+  "afterContextMenuDefaultOptions",
 
   /**
    * Fired each time user opens {@link ContextMenu} plugin before setting up the Context Menu's items but after filtering these options by
@@ -104,7 +104,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#beforeContextMenuSetItems
    * @param {Object[]} menuItems An array of objects containing information about to generated Context Menu items.
    */
-  'beforeContextMenuSetItems',
+  "beforeContextMenuSetItems",
 
   /**
    * Fired by {@link DropdownMenu} plugin after setting up the Dropdown Menu's default options. These options are a
@@ -114,7 +114,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterDropdownMenuDefaultOptions
    * @param {Object[]} predefinedItems An array of objects containing information about the pre-defined Context Menu items.
    */
-  'afterDropdownMenuDefaultOptions',
+  "afterDropdownMenuDefaultOptions",
 
   /**
    * Fired by {@link DropdownMenu} plugin before setting up the Dropdown Menu's items but after filtering these options
@@ -124,7 +124,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#beforeDropdownMenuSetItems
    * @param {Object[]} menuItems An array of objects containing information about to generated Dropdown Menu items.
    */
-  'beforeDropdownMenuSetItems',
+  "beforeDropdownMenuSetItems",
 
   /**
    * Fired by {@link ContextMenu} plugin after hiding the Context Menu. This hook is fired when {@link Options#contextMenu}
@@ -133,7 +133,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterContextMenuHide
    * @param {Object} context The Context Menu plugin instance.
    */
-  'afterContextMenuHide',
+  "afterContextMenuHide",
 
   /**
    * Fired by {@link ContextMenu} plugin before opening the Context Menu. This hook is fired when {@link Options#contextMenu}
@@ -142,7 +142,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#beforeContextMenuShow
    * @param {Object} context The Context Menu instance.
    */
-  'beforeContextMenuShow',
+  "beforeContextMenuShow",
 
   /**
    * Fired by {@link ContextMenu} plugin after opening the Context Menu. This hook is fired when {@link Options#contextMenu}
@@ -151,7 +151,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterContextMenuShow
    * @param {Object} context The Context Menu plugin instance.
    */
-  'afterContextMenuShow',
+  "afterContextMenuShow",
 
   /**
    * Fired by {@link CopyPaste} plugin after reaching the copy limit while copying data. This hook is fired when
@@ -163,7 +163,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} copyRowsLimit Current copy rows limit.
    * @param {Number} copyColumnsLimit Current copy columns limit.
    */
-  'afterCopyLimit',
+  "afterCopyLimit",
 
   /**
    * Fired before created a new column.
@@ -174,7 +174,7 @@ const REGISTERED_HOOKS = [
    * @param {String} [source] String that identifies source of hook call
    *                          ([list of all available sources]{@link http://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'beforeCreateCol',
+  "beforeCreateCol",
 
   /**
    * Fired after created a new column.
@@ -185,7 +185,7 @@ const REGISTERED_HOOKS = [
    * @param {String} [source] String that identifies source of hook call
    *                          ([list of all available sources]{@link http://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'afterCreateCol',
+  "afterCreateCol",
 
   /**
    * Fired before created a new row.
@@ -196,7 +196,7 @@ const REGISTERED_HOOKS = [
    * @param {String} [source] String that identifies source of hook call
    *                          ([list of all available sources]{@link http://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'beforeCreateRow',
+  "beforeCreateRow",
 
   /**
    * Fired after created a new row.
@@ -207,21 +207,21 @@ const REGISTERED_HOOKS = [
    * @param {String} [source] String that identifies source of hook call
    *                          ([list of all available sources]{@link http://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'afterCreateRow',
+  "afterCreateRow",
 
   /**
    * Fired after the current cell is deselected.
    *
    * @event Hooks#afterDeselect
    */
-  'afterDeselect',
+  "afterDeselect",
 
   /**
    * Fired after destroying the Handsontable instance.
    *
    * @event Hooks#afterDestroy
    */
-  'afterDestroy',
+  "afterDestroy",
 
   /**
    * General hook which captures `keydown` events attached to the document body. These events are delegated to the
@@ -230,7 +230,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterDocumentKeyDown
    * @param {Event} event A native `keydown` event object.
    */
-  'afterDocumentKeyDown',
+  "afterDocumentKeyDown",
 
   /**
    * Fired inside the Walkontable's selection `draw` method. Can be used to add additional class names to cells, depending on the current selection.
@@ -243,7 +243,7 @@ const REGISTERED_HOOKS = [
    * @since 0.38.1
    * @returns {String|undefined} Can return a `String`, which will act as an additional `className` to be added to the currently processed cell.
    */
-  'afterDrawSelection',
+  "afterDrawSelection",
 
   /**
    * Fired inside the Walkontable's `refreshSelections` method. Can be used to remove additional class names from all cells in the table.
@@ -252,7 +252,7 @@ const REGISTERED_HOOKS = [
    * @since 0.38.1
    * @returns {String[]|undefined} Can return an `Array` of `String`s. Each of these strings will act like class names to be removed from all the cells in the table.
    */
-  'beforeRemoveCellClassNames',
+  "beforeRemoveCellClassNames",
 
   /**
    * Fired after getting the cell settings.
@@ -262,7 +262,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} column Visual column index.
    * @param {Object} cellProperties Object containing the cell properties.
    */
-  'afterGetCellMeta',
+  "afterGetCellMeta",
 
   /**
    * Fired after retrieving information about a column header and appending it to the table header.
@@ -271,7 +271,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} column Visual column index.
    * @param {HTMLTableCellElement} TH Header's TH element.
    */
-  'afterGetColHeader',
+  "afterGetColHeader",
 
   /**
    * Fired after retrieving information about a row header and appending it to the table header.
@@ -280,14 +280,14 @@ const REGISTERED_HOOKS = [
    * @param {Number} row Visual row index.
    * @param {HTMLTableCellElement} TH Header's TH element.
    */
-  'afterGetRowHeader',
+  "afterGetRowHeader",
 
   /**
    * Fired after the Handsontable instance is initiated.
    *
    * @event Hooks#afterInit
    */
-  'afterInit',
+  "afterInit",
 
   /**
    * Fired after new data is loaded (by `loadData` or `updateSettings` method) into the data source array.
@@ -295,14 +295,14 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterLoadData
    * @param {Boolean} initialLoad flag that determines whether the data has been loaded during the initialization.
    */
-  'afterLoadData',
+  "afterLoadData",
 
   /**
    * Fired after a scroll event, which is identified as a momentum scroll (e.g. on an iPad).
    *
    * @event Hooks#afterMomentumScroll
    */
-  'afterMomentumScroll',
+  "afterMomentumScroll",
 
   /**
    * Fired after a `mousedown` event is triggered on the cell corner (the drag handle).
@@ -310,7 +310,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterOnCellCornerMouseDown
    * @param {Event} event `mousedown` event object.
    */
-  'afterOnCellCornerMouseDown',
+  "afterOnCellCornerMouseDown",
 
   /**
    * Fired after a `dblclick` event is triggered on the cell corner (the drag handle).
@@ -318,7 +318,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterOnCellCornerDblClick
    * @param {Event} event `dblclick` event object.
    */
-  'afterOnCellCornerDblClick',
+  "afterOnCellCornerDblClick",
 
   /**
    * Fired after clicking on a cell or row/column header. In case the row/column header was clicked, the coordinate
@@ -332,7 +332,7 @@ const REGISTERED_HOOKS = [
    * @param {CellCoords} coords Coordinates object containing the visual row and visual column indexes of the clicked cell.
    * @param {HTMLTableCellElement} TD Cell's TD (or TH) element.
    */
-  'afterOnCellMouseDown',
+  "afterOnCellMouseDown",
 
   /**
    * Fired after clicking on a cell or row/column header. In case the row/column header was clicked, the coordinate
@@ -346,7 +346,7 @@ const REGISTERED_HOOKS = [
    * @param {CellCoords} coords Coordinates object containing the visual row and visual column indexes of the clicked cell.
    * @param {HTMLTableCellElement} TD Cell's TD (or TH) element.
    */
-  'afterOnCellMouseUp',
+  "afterOnCellMouseUp",
 
   /**
    * Fired after clicking right mouse button on a cell or row/column header.
@@ -360,7 +360,7 @@ const REGISTERED_HOOKS = [
    * @param {CellCoords} coords Coordinates object containing the visual row and visual column indexes of the clicked cell.
    * @param {HTMLTableCellElement} TD Cell's TD (or TH) element.
    */
-  'afterOnCellContextMenu',
+  "afterOnCellContextMenu",
 
   /**
    * Fired after hovering a cell or row/column header with the mouse cursor. In case the row/column header was
@@ -374,7 +374,7 @@ const REGISTERED_HOOKS = [
    * @param {CellCoords} coords Hovered cell's visual coordinate object.
    * @param {HTMLTableCellElement} TD Cell's TD (or TH) element.
    */
-  'afterOnCellMouseOver',
+  "afterOnCellMouseOver",
 
   /**
    * Fired after leaving a cell or row/column header with the mouse cursor.
@@ -384,7 +384,7 @@ const REGISTERED_HOOKS = [
    * @param {CellCoords} coords Leaved cell's visual coordinate object.
    * @param {HTMLTableCellElement} TD Cell's TD (or TH) element.
    */
-  'afterOnCellMouseOut',
+  "afterOnCellMouseOut",
 
   /**
    * Fired after one or more columns are removed.
@@ -395,7 +395,7 @@ const REGISTERED_HOOKS = [
    * @param {Number[]} physicalColumns An array of physical columns removed from the data source.
    * @param {String} [source] String that identifies source of hook call ([list of all available sources]{@link https://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'afterRemoveCol',
+  "afterRemoveCol",
 
   /**
    * Fired after one or more rows are removed.
@@ -406,7 +406,7 @@ const REGISTERED_HOOKS = [
    * @param {Number[]} physicalRows An array of physical rows removed from the data source.
    * @param {String} [source] String that identifies source of hook call ([list of all available sources]{@link https://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'afterRemoveRow',
+  "afterRemoveRow",
 
   /**
    * Fired after the Handsontable table is rendered.
@@ -415,7 +415,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} isForced Is `true` if rendering was triggered by a change of settings or data; or `false` if
    *                           rendering was triggered by scrolling or moving selection.
    */
-  'afterRender',
+  "afterRender",
 
   /**
    * Fired before starting rendering the cell.
@@ -428,7 +428,7 @@ const REGISTERED_HOOKS = [
    * @param {*} value Value of the rendered cell.
    * @param {Object} cellProperties Object containing the cell's properties.
    */
-  'beforeRenderer',
+  "beforeRenderer",
 
   /**
    * Fired after finishing rendering the cell (after the renderer finishes).
@@ -441,21 +441,21 @@ const REGISTERED_HOOKS = [
    * @param {*} value Value of the rendered cell.
    * @param {Object} cellProperties Object containing the cell's properties.
    */
-  'afterRenderer',
+  "afterRenderer",
 
   /**
    * Fired after the horizontal scroll event.
    *
    * @event Hooks#afterScrollHorizontally
    */
-  'afterScrollHorizontally',
+  "afterScrollHorizontally",
 
   /**
    * Fired after the vertical scroll event.
    *
    * @event Hooks#afterScrollVertically
    */
-  'afterScrollVertically',
+  "afterScrollVertically",
 
   /**
    * Fired after one or more cells are selected (e.g. during mouse move).
@@ -477,7 +477,7 @@ const REGISTERED_HOOKS = [
    * })
    * ```
    */
-  'afterSelection',
+  "afterSelection",
 
   /**
    * Fired after one or more cells are selected.
@@ -501,7 +501,7 @@ const REGISTERED_HOOKS = [
    * })
    * ```
    */
-  'afterSelectionByProp',
+  "afterSelectionByProp",
 
   /**
    * Fired after one or more cells are selected (e.g. on mouse up).
@@ -513,7 +513,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} column2 Selection end visual column index.
    * @param {Number} selectionLayerLevel The number which indicates what selection layer is currently modified.
    */
-  'afterSelectionEnd',
+  "afterSelectionEnd",
 
   /**
    * Fired after one or more cells are selected (e.g. on mouse up).
@@ -527,7 +527,7 @@ const REGISTERED_HOOKS = [
    * @param {String} prop2 Selection end data source object property index.
    * @param {Number} selectionLayerLevel The number which indicates what selection layer is currently modified.
    */
-  'afterSelectionEndByProp',
+  "afterSelectionEndByProp",
 
   /**
    * Fired after cell meta is changed.
@@ -538,7 +538,7 @@ const REGISTERED_HOOKS = [
    * @param {String} key The updated meta key.
    * @param {*} value The updated meta value.
    */
-  'afterSetCellMeta',
+  "afterSetCellMeta",
 
   /**
    * Fired after cell meta is removed.
@@ -549,7 +549,7 @@ const REGISTERED_HOOKS = [
    * @param {String} key The removed meta key.
    * @param {*} value Value which was under removed key of cell meta.
    */
-  'afterRemoveCellMeta',
+  "afterRemoveCellMeta",
 
   /**
    * Fired after cell data was changed.
@@ -559,7 +559,7 @@ const REGISTERED_HOOKS = [
    * @param {String} [source] String that identifies source of hook call
    *                          ([list of all available sources]{@link http://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'afterSetDataAtCell',
+  "afterSetDataAtCell",
 
   /**
    * Fired after cell data was changed.
@@ -569,7 +569,7 @@ const REGISTERED_HOOKS = [
    * @param {String} [source] String that identifies source of hook call
    *                          ([list of all available sources]{@link http://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'afterSetDataAtRowProp',
+  "afterSetDataAtRowProp",
 
   /**
    * Fired after calling the `updateSettings` method.
@@ -577,7 +577,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterUpdateSettings
    * @param {Object} newSettings New settings object.
    */
-  'afterUpdateSettings',
+  "afterUpdateSettings",
 
   /**
    * @description
@@ -594,7 +594,7 @@ const REGISTERED_HOOKS = [
    * @param {String} [source] String that identifies source of hook call
    *                          ([list of all available sources]{@link http://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'afterValidate',
+  "afterValidate",
 
   /**
    * Fired before successful change of language (when proper language code was set)
@@ -603,7 +603,7 @@ const REGISTERED_HOOKS = [
    * @since 0.35.0
    * @param {String} languageCode New language code.
    */
-  'beforeLanguageChange',
+  "beforeLanguageChange",
 
   /**
    * Fired after successful change of language (when proper language code was set).
@@ -612,7 +612,7 @@ const REGISTERED_HOOKS = [
    * @since 0.35.0
    * @param {String} languageCode New language code.
    */
-  'afterLanguageChange',
+  "afterLanguageChange",
 
   /**
    * Fired by {@link Autofill} plugin before populating the data in the autofill feature. This hook is fired when
@@ -623,7 +623,7 @@ const REGISTERED_HOOKS = [
    * @param {CellCoords} end Object containing information about last filled cell: `{row: 4, col: 1}`.
    * @param {Array[]} data 2D array containing information about fill pattern: `[["1", "Ted"], ["1", "John"]]`.
    */
-  'beforeAutofill',
+  "beforeAutofill",
 
   /**
    * Fired before aligning the cell contents.
@@ -642,7 +642,7 @@ const REGISTERED_HOOKS = [
    * * `htMiddle`
    * * `htBottom`
    */
-  'beforeCellAlignment',
+  "beforeCellAlignment",
 
   /**
    * Fired before one or more cells is changed. Its main purpose is to alter changes silently after input and before
@@ -677,7 +677,7 @@ const REGISTERED_HOOKS = [
    * });
    * ```
    */
-  'beforeChange',
+  "beforeChange",
 
   /**
    * Fired right before rendering the changes.
@@ -687,7 +687,7 @@ const REGISTERED_HOOKS = [
    * @param {String} [source] String that identifies source of hook call
    *                          ([list of all available sources]{@link http://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'beforeChangeRender',
+  "beforeChangeRender",
 
   /**
    * Fired before drawing the borders.
@@ -696,7 +696,7 @@ const REGISTERED_HOOKS = [
    * @param {Array} corners Array specifying the current selection borders.
    * @param {String} borderClassName Specifies the border class name.
    */
-  'beforeDrawBorders',
+  "beforeDrawBorders",
 
   /**
    * Fired before getting cell settings.
@@ -706,7 +706,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} column Visual column index.
    * @param {Object} cellProperties Object containing the cell's properties.
    */
-  'beforeGetCellMeta',
+  "beforeGetCellMeta",
 
   /**
    * Fired before cell meta is removed.
@@ -717,14 +717,14 @@ const REGISTERED_HOOKS = [
    * @param {String} key The removed meta key.
    * @param {*} value Value which is under removed key of cell meta.
    */
-  'beforeRemoveCellMeta',
+  "beforeRemoveCellMeta",
 
   /**
    * Fired before the Handsontable instance is initiated.
    *
    * @event Hooks#beforeInit
    */
-  'beforeInit',
+  "beforeInit",
 
   /**
    * Fired before the Walkontable instance is initiated.
@@ -732,7 +732,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#beforeInitWalkontable
    * @param {Object} walkontableConfig Walkontable configuration object.
    */
-  'beforeInitWalkontable',
+  "beforeInitWalkontable",
 
   /**
    * Fired before keydown event is handled. It can be used to overwrite default key bindings.
@@ -743,7 +743,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#beforeKeyDown
    * @param {Event} event Original DOM event.
    */
-  'beforeKeyDown',
+  "beforeKeyDown",
 
   /**
    * Fired after the user clicked a cell, but before all the calculations related with it.
@@ -755,7 +755,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} controller An object with keys `row`, `column` and `cells` which contains boolean values. This
    *                            object allows or disallows changing the selection for the particular axies.
    */
-  'beforeOnCellMouseDown',
+  "beforeOnCellMouseDown",
 
   /**
    * Fired after the user clicked a cell.
@@ -767,7 +767,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} controller An object with keys `row`, `column` and `cells` which contains boolean values. This
    *                            object allows or disallows changing the selection for the particular axies.
    */
-  'beforeOnCellMouseUp',
+  "beforeOnCellMouseUp",
 
   /**
    * Fired after the user clicked a cell, but before all the calculations related with it.
@@ -778,7 +778,7 @@ const REGISTERED_HOOKS = [
    * @param {CellCoords} coords Cell coords object containing the visual coordinates of the clicked cell.
    * @param {HTMLTableCellElement} TD TD element.
    */
-  'beforeOnCellContextMenu',
+  "beforeOnCellContextMenu",
 
   /**
    * Fired after the user moved cursor over a cell, but before all the calculations related with it.
@@ -790,7 +790,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} controller An object with keys `row`, `column` and `cells` which contains boolean values. This
    *                            object allows or disallows changing the selection for the particular axies.
    */
-  'beforeOnCellMouseOver',
+  "beforeOnCellMouseOver",
 
   /**
    * Fired after the user moved cursor out from a cell, but before all the calculations related with it.
@@ -800,7 +800,7 @@ const REGISTERED_HOOKS = [
    * @param {CellCoords} coords CellCoords object containing the visual coordinates of the leaved cell.
    * @param {HTMLTableCellElement} TD TD element.
    */
-  'beforeOnCellMouseOut',
+  "beforeOnCellMouseOut",
 
   /**
    * Fired before one or more columns are about to be removed.
@@ -811,7 +811,7 @@ const REGISTERED_HOOKS = [
    * @param {Number[]} physicalColumns An array of physical columns removed from the data source.
    * @param {String} [source] String that identifies source of hook call ([list of all available sources]{@link https://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'beforeRemoveCol',
+  "beforeRemoveCol",
 
   /**
    * Fired when one or more rows are about to be removed.
@@ -822,7 +822,7 @@ const REGISTERED_HOOKS = [
    * @param {Number[]} physicalRows An array of physical rows removed from the data source.
    * @param {String} [source] String that identifies source of hook call ([list of all available sources]{@link https://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'beforeRemoveRow',
+  "beforeRemoveRow",
 
   /**
    * Fired before the Handsontable table is rendered.
@@ -831,7 +831,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} isForced If `true` rendering was triggered by a change of settings or data; or `false` if
    *                           rendering was triggered by scrolling or moving selection.
    */
-  'beforeRender',
+  "beforeRender",
 
   /**
    * Fired before setting range is started but not finished yet.
@@ -839,7 +839,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#beforeSetRangeStartOnly
    * @param {CellCoords} coords CellCoords instance.
    */
-  'beforeSetRangeStartOnly',
+  "beforeSetRangeStartOnly",
 
   /**
    * Fired before setting range is started.
@@ -847,7 +847,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#beforeSetRangeStart
    * @param {CellCoords} coords CellCoords instance.
    */
-  'beforeSetRangeStart',
+  "beforeSetRangeStart",
 
   /**
    * Fired before setting range is ended.
@@ -855,14 +855,14 @@ const REGISTERED_HOOKS = [
    * @event Hooks#beforeSetRangeEnd
    * @param {CellCoords} coords CellCoords instance.
    */
-  'beforeSetRangeEnd',
+  "beforeSetRangeEnd",
 
   /**
    * Fired before the logic of handling a touch scroll, when user started scrolling on a touch-enabled device.
    *
    * @event Hooks#beforeTouchScroll
    */
-  'beforeTouchScroll',
+  "beforeTouchScroll",
 
   /**
    * Fired before cell validation, only if validator function is defined. This can be used to manipulate the value
@@ -877,7 +877,7 @@ const REGISTERED_HOOKS = [
    * @param {String} [source] String that identifies source of hook call
    *                          ([list of all available sources]{@link http://docs.handsontable.com/tutorial-using-callbacks.html#page-source-definition}).
    */
-  'beforeValidate',
+  "beforeValidate",
 
   /**
    * Fired before cell value is rendered into the DOM (through renderer function). This can be used to manipulate the
@@ -887,21 +887,21 @@ const REGISTERED_HOOKS = [
    * @param {*} value Cell value to render.
    * @param {Object} cellProperties An object containing the cell properties.
    */
-  'beforeValueRender',
+  "beforeValueRender",
 
   /**
    * Fired after Handsontable instance is constructed (using `new` operator).
    *
    * @event Hooks#construct
    */
-  'construct',
+  "construct",
 
   /**
    * Fired after Handsontable instance is initiated but before table is rendered.
    *
    * @event Hooks#init
    */
-  'init',
+  "init",
 
   /**
    * Fired when a column index is about to be modified by a callback function.
@@ -909,7 +909,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#modifyCol
    * @param {Number} column Visual column index.
    */
-  'modifyCol',
+  "modifyCol",
 
   /**
    * Fired when a column index is about to be de-modified by a callback function.
@@ -917,7 +917,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#unmodifyCol
    * @param {Number} column Physical column index.
    */
-  'unmodifyCol',
+  "unmodifyCol",
 
   /**
    * Fired when a physical row index is about to be de-modified by a callback function.
@@ -925,7 +925,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#unmodifyRow
    * @param {Number} row Physical row index.
    */
-  'unmodifyRow',
+  "unmodifyRow",
 
   /**
    * Fired when a column header index is about to be modified by a callback function.
@@ -933,7 +933,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#modifyColHeader
    * @param {Number} column Visual column header index.
    */
-  'modifyColHeader',
+  "modifyColHeader",
 
   /**
    * Fired when a column width is about to be modified by a callback function.
@@ -942,7 +942,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} width Current column width.
    * @param {Number} column Visual column index.
    */
-  'modifyColWidth',
+  "modifyColWidth",
 
   /**
    * Fired when a row index is about to be modified by a callback function.
@@ -950,7 +950,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#modifyRow
    * @param {Number} row Visual row index.
    */
-  'modifyRow',
+  "modifyRow",
 
   /**
    * Fired when a row header index is about to be modified by a callback function.
@@ -958,7 +958,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#modifyRowHeader
    * @param {Number} row Visual row header index.
    */
-  'modifyRowHeader',
+  "modifyRowHeader",
 
   /**
    * Fired when a row height is about to be modified by a callback function.
@@ -967,7 +967,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} height Row height.
    * @param {Number} row Visual row index.
    */
-  'modifyRowHeight',
+  "modifyRowHeight",
 
   /**
    * Fired when a data was retrieved or modified.
@@ -978,7 +978,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} valueHolder Object which contains original value which can be modified by overwriting `.value` property.
    * @param {String} ioMode String which indicates for what operation hook is fired (`get` or `set`).
    */
-  'modifyData',
+  "modifyData",
 
   /**
    * Fired when a data was retrieved or modified.
@@ -986,7 +986,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#modifyRowData
    * @param {Number} row Physical row index.
    */
-  'modifyRowData',
+  "modifyRowData",
 
   /**
    * Used to modify the cell coordinates when using the `getCell` method.
@@ -999,7 +999,7 @@ const REGISTERED_HOOKS = [
    *                          if the wanted cell is in the range of fixed rows, it will return a TD element
    *                          from the `top` overlay.
    */
-  'modifyGetCellCoords',
+  "modifyGetCellCoords",
 
   /**
    * Fired by {@link PersistentState} plugin, after loading value, saved under given key, from browser local storage. This hook is fired when
@@ -1009,7 +1009,7 @@ const REGISTERED_HOOKS = [
    * @param {String} key Key.
    * @param {Object} valuePlaceholder Object containing the loaded value under `valuePlaceholder.value` (if no value have been saved, `value` key will be undefined).
    */
-  'persistentStateLoad',
+  "persistentStateLoad",
 
   /**
    * Fired by {@link PersistentState} plugin after resetting data from local storage. If no key is given, all values associated with table will be cleared.
@@ -1018,7 +1018,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#persistentStateReset
    * @param {String} [key] Key.
    */
-  'persistentStateReset',
+  "persistentStateReset",
 
   /**
    * Fired by {@link PersistentState} plugin, after saving value under given key in browser local storage. This hook is fired when
@@ -1028,7 +1028,7 @@ const REGISTERED_HOOKS = [
    * @param {String} key Key.
    * @param {Mixed} value Value to save.
    */
-  'persistentStateSave',
+  "persistentStateSave",
 
   /**
    * Fired by {@link ColumnSorting} and {@link MultiColumnSorting} plugins before sorting the column. If you return `false` value inside callback for hook, then sorting
@@ -1040,7 +1040,7 @@ const REGISTERED_HOOKS = [
    * @param {Array} currentSortConfig Current sort configuration (for all sorted columns).
    * @param {Array} destinationSortConfigs Destination sort configuration (for all sorted columns).
    */
-  'beforeColumnSort',
+  "beforeColumnSort",
 
   /**
    * Fired by {@link ColumnSorting} and {@link MultiColumnSorting} plugins after sorting the column. This hook is fired when {@link Options#columnSorting}
@@ -1050,7 +1050,7 @@ const REGISTERED_HOOKS = [
    * @param {Array} currentSortConfig Current sort configuration (for all sorted columns).
    * @param {Array} destinationSortConfigs Destination sort configuration (for all sorted columns).
    */
-  'afterColumnSort',
+  "afterColumnSort",
 
   /**
    * Fired by {@link Autofill} plugin after setting range of autofill. This hook is fired when {@link Options#fillHandle}
@@ -1060,7 +1060,7 @@ const REGISTERED_HOOKS = [
    * @param {Array} startArea Array of visual coordinates of the starting point for the drag-down operation (`[startRow, startColumn, endRow, endColumn]`).
    * @param {Array} entireArea Array of visual coordinates of the entire area of the drag-down operation (`[startRow, startColumn, endRow, endColumn]`).
    */
-  'modifyAutofillRange',
+  "modifyAutofillRange",
 
   /**
    * Fired to allow modifying the copyable range with a callback function.
@@ -1068,7 +1068,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#modifyCopyableRange
    * @param {Array[]} copyableRanges Array of objects defining copyable cells.
    */
-  'modifyCopyableRange',
+  "modifyCopyableRange",
 
   /**
    * Fired by {@link CopyPaste} plugin before copying the values into clipboard and before clearing values of
@@ -1098,7 +1098,7 @@ const REGISTERED_HOOKS = [
    * });
    * ```
    */
-  'beforeCut',
+  "beforeCut",
 
   /**
    * Fired by {@link CopyPaste} plugin after data was cut out from the table. This hook is fired when
@@ -1109,7 +1109,7 @@ const REGISTERED_HOOKS = [
    * @param {Object[]} coords An array of objects with ranges of the visual indexes (`startRow`, `startCol`, `endRow`, `endCol`)
    *                       which was cut out.
    */
-  'afterCut',
+  "afterCut",
 
   /**
    * Fired before values are copied into clipboard.
@@ -1144,7 +1144,7 @@ const REGISTERED_HOOKS = [
    * ...
    * ```
    */
-  'beforeCopy',
+  "beforeCopy",
 
   /**
    * Fired by {@link CopyPaste} plugin after data are pasted into table. This hook is fired when {@link Options#copyPaste}
@@ -1155,7 +1155,7 @@ const REGISTERED_HOOKS = [
    * @param {Object[]} coords An array of objects with ranges of the visual indexes (`startRow`, `startCol`, `endRow`, `endCol`)
    *                         which was copied.
    */
-  'afterCopy',
+  "afterCopy",
 
   /**
    * Fired by {@link CopyPaste} plugin before values are pasted into table. This hook is fired when
@@ -1185,7 +1185,7 @@ const REGISTERED_HOOKS = [
    * });
    * ```
    */
-  'beforePaste',
+  "beforePaste",
 
   /**
    * Fired by {@link CopyPaste} plugin after values are pasted into table. This hook is fired when
@@ -1196,7 +1196,7 @@ const REGISTERED_HOOKS = [
    * @param {Object[]} coords An array of objects with ranges of the visual indexes (`startRow`, `startCol`, `endRow`, `endCol`)
    *                       that correspond to the previously selected area.
    */
-  'afterPaste',
+  "afterPaste",
 
   /**
    * Fired by {@link ManualColumnMove} plugin before change order of the visual indexes. This hook is fired when
@@ -1206,7 +1206,7 @@ const REGISTERED_HOOKS = [
    * @param {Number[]} columns Array of visual column indexes to be moved.
    * @param {Number} target Visual column index being a target for moved columns.
    */
-  'beforeColumnMove',
+  "beforeColumnMove",
 
   /**
    * Fired by {@link ManualColumnMove} plugin after changing order of the visual indexes. This hook is fired when
@@ -1216,7 +1216,7 @@ const REGISTERED_HOOKS = [
    * @param {Number[]} columns Array of visual column indexes that were moved.
    * @param {Number} target Visual column index being a target for moved columns.
    */
-  'afterColumnMove',
+  "afterColumnMove",
 
   /**
    * Fired by {@link ManualRowMove} plugin before change order of the visual indexes. This hook is fired when
@@ -1226,7 +1226,7 @@ const REGISTERED_HOOKS = [
    * @param {Number[]} rows An array of visual row indexes to be moved.
    * @param {Number} target Visual row index being a target for moved rows.
    */
-  'beforeRowMove',
+  "beforeRowMove",
 
   /**
    * Fired by {@link ManualRowMove} plugin after change order of the visual indexes. This hook is fired when
@@ -1236,7 +1236,7 @@ const REGISTERED_HOOKS = [
    * @param {Number[]} rows An array of visual row indexes that were moved.
    * @param {Number} target Visual row index being a target for moved rows.
    */
-  'afterRowMove',
+  "afterRowMove",
 
   /**
    * Fired by {@link ManualColumnResize} plugin before rendering the table with modified column sizes. This hook is
@@ -1248,7 +1248,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} isDoubleClick Flag that determines whether there was a double-click.
    * @returns {Number} Returns a new column size or `undefined`, if column size should be calculated automatically.
    */
-  'beforeColumnResize',
+  "beforeColumnResize",
 
   /**
    * Fired by {@link ManualColumnResize} plugin after rendering the table with modified column sizes. This hook is
@@ -1259,7 +1259,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} newSize Calculated new column width.
    * @param {Boolean} isDoubleClick Flag that determines whether there was a double-click.
    */
-  'afterColumnResize',
+  "afterColumnResize",
 
   /**
    * Fired by {@link ManualRowResize} plugin before rendering the table with modified row sizes. This hook is
@@ -1271,7 +1271,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} isDoubleClick Flag that determines whether there was a double-click.
    * @returns {Number} Returns the new row size or `undefined` if row size should be calculated automatically.
    */
-  'beforeRowResize',
+  "beforeRowResize",
 
   /**
    * Fired by {@link ManualRowResize} plugin after rendering the table with modified row sizes. This hook is
@@ -1282,7 +1282,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} newSize Calculated new row height.
    * @param {Boolean} isDoubleClick Flag that determines whether there was a double-click.
    */
-  'afterRowResize',
+  "afterRowResize",
 
   /**
    * Fired after getting the column header renderers.
@@ -1290,7 +1290,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterGetColumnHeaderRenderers
    * @param {Function[]} renderers An array of the column header renderers.
    */
-  'afterGetColumnHeaderRenderers',
+  "afterGetColumnHeaderRenderers",
 
   /**
    * Fired after getting the row header renderers.
@@ -1298,7 +1298,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterGetRowHeaderRenderers
    * @param {Function[]} renderers An array of the row header renderers.
    */
-  'afterGetRowHeaderRenderers',
+  "afterGetRowHeaderRenderers",
 
   /**
    * Fired before applying stretched column width to column.
@@ -1308,7 +1308,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} column Visual column index.
    * @returns {Number} Returns new width which will be applied to the column element.
    */
-  'beforeStretchingColumnWidth',
+  "beforeStretchingColumnWidth",
 
   /**
    * Fired by {@link Filters} plugin before applying [filtering]{@link http://docs.handsontable.com/pro/demo-filtering.html}. This hook is fired when
@@ -1337,7 +1337,7 @@ const REGISTERED_HOOKS = [
    * ```
    * @returns {Boolean} If hook returns `false` value then filtering won't be applied on the UI side (server-side filtering).
    */
-  'beforeFilter',
+  "beforeFilter",
 
   /**
    * Fired by {@link Filters} plugin after applying [filtering]{@link http://docs.handsontable.com/pro/demo-filtering.html}. This hook is fired when
@@ -1365,14 +1365,14 @@ const REGISTERED_HOOKS = [
    * ]
    * ```
    */
-  'afterFilter',
+  "afterFilter",
 
   /**
    * Fired while retrieving the column header height.
    *
    * @event Hooks#modifyColumnHeaderHeight
    */
-  'modifyColumnHeaderHeight',
+  "modifyColumnHeaderHeight",
 
   /**
    * Fired by {@link UndoRedo} plugin before the undo action. Contains information about the action that is being undone.
@@ -1382,7 +1382,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} action The action object. Contains information about the action being undone. The `actionType`
    *                        property of the object specifies the type of the action in a String format. (e.g. `'remove_row'`).
    */
-  'beforeUndo',
+  "beforeUndo",
 
   /**
    * Fired by {@link UndoRedo} plugin after the undo action. Contains information about the action that is being undone.
@@ -1392,7 +1392,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} action The action object. Contains information about the action being undone. The `actionType`
    *                        property of the object specifies the type of the action in a String format. (e.g. `'remove_row'`).
    */
-  'afterUndo',
+  "afterUndo",
 
   /**
    * Fired by {@link UndoRedo} plugin before the redo action. Contains information about the action that is being redone.
@@ -1402,7 +1402,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} action The action object. Contains information about the action being redone. The `actionType`
    *                        property of the object specifies the type of the action in a String format (e.g. `'remove_row'`).
    */
-  'beforeRedo',
+  "beforeRedo",
 
   /**
    * Fired by {@link UndoRedo} plugin after the redo action. Contains information about the action that is being redone.
@@ -1412,7 +1412,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} action The action object. Contains information about the action being redone. The `actionType`
    *                        property of the object specifies the type of the action in a String format (e.g. `'remove_row'`).
    */
-  'afterRedo',
+  "afterRedo",
 
   /**
    * Fired while retrieving the row header width.
@@ -1420,7 +1420,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#modifyRowHeaderWidth
    * @param {Number} rowHeaderWidth Row header width.
    */
-  'modifyRowHeaderWidth',
+  "modifyRowHeaderWidth",
 
   /**
    * Fired from the `populateFromArray` method during the `autofill` process. Fired for each "autofilled" cell individually.
@@ -1431,7 +1431,7 @@ const REGISTERED_HOOKS = [
    * @param {Array[]} input Contains an array of rows with data being used in the autofill.
    * @param {Array} deltas The deltas array passed to the `populateFromArray` method.
    */
-  'beforeAutofillInsidePopulate',
+  "beforeAutofillInsidePopulate",
 
   /**
    * Fired when the start of the selection is being modified (e.g. moving the selection with the arrow keys).
@@ -1439,7 +1439,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#modifyTransformStart
    * @param {CellCoords} delta Cell coords object declaring the delta of the new selection relative to the previous one.
    */
-  'modifyTransformStart',
+  "modifyTransformStart",
 
   /**
    * Fired when the end of the selection is being modified (e.g. moving the selection with the arrow keys).
@@ -1447,7 +1447,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#modifyTransformEnd
    * @param {CellCoords} delta Cell coords object declaring the delta of the new selection relative to the previous one.
    */
-  'modifyTransformEnd',
+  "modifyTransformEnd",
 
   /**
    * Fired after the start of the selection is being modified (e.g. moving the selection with the arrow keys).
@@ -1457,7 +1457,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} rowTransformDir `-1` if trying to select a cell with a negative row index. `0` otherwise.
    * @param {Number} colTransformDir `-1` if trying to select a cell with a negative column index. `0` otherwise.
    */
-  'afterModifyTransformStart',
+  "afterModifyTransformStart",
 
   /**
    * Fired after the end of the selection is being modified (e.g. moving the selection with the arrow keys).
@@ -1467,7 +1467,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} rowTransformDir `-1` if trying to select a cell with a negative row index. `0` otherwise.
    * @param {Number} colTransformDir `-1` if trying to select a cell with a negative column index. `0` otherwise.
    */
-  'afterModifyTransformEnd',
+  "afterModifyTransformEnd",
 
   /**
    * Fired inside the `viewportRowCalculatorOverride` method. Allows modifying the row calculator parameters.
@@ -1475,7 +1475,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterViewportRowCalculatorOverride
    * @param {Object} calc The row calculator.
    */
-  'afterViewportRowCalculatorOverride',
+  "afterViewportRowCalculatorOverride",
 
   /**
    * Fired inside the `viewportColumnCalculatorOverride` method. Allows modifying the row calculator parameters.
@@ -1483,14 +1483,14 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterViewportColumnCalculatorOverride
    * @param {Object} calc The row calculator.
    */
-  'afterViewportColumnCalculatorOverride',
+  "afterViewportColumnCalculatorOverride",
 
   /**
    * Fired after initializing all the plugins.
    *
    * @event Hooks#afterPluginsInitialized
    */
-  'afterPluginsInitialized',
+  "afterPluginsInitialized",
 
   /**
    * Used to skip the length cache calculation for a defined period of time.
@@ -1498,7 +1498,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#skipLengthCache
    * @param {Number} delay The delay in milliseconds.
    */
-  'skipLengthCache',
+  "skipLengthCache",
 
   /**
    * Fired by {@link HiddenRows} plugin before marking the rows as hidden. Fired only if the {@link Options#hiddenRows} option is enabled.
@@ -1510,7 +1510,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if provided row indexes are valid, `false` otherwise.
    * @returns {undefined|Boolean} If the callback returns `false`, the hiding action will not be completed.
    */
-  'beforeHideRows',
+  "beforeHideRows",
 
   /**
    * Fired by {@link HiddenRows} plugin after marking the rows as hidden. Fired only if the {@link Options#hiddenRows} option is enabled.
@@ -1521,7 +1521,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if provided row indexes are valid, `false` otherwise.
    * @param {Boolean} stateChanged `true`, if the action affected any non-hidden rows, `false` otherwise.
    */
-  'afterHideRows',
+  "afterHideRows",
 
   /**
    * Fired by {@link HiddenRows} plugin before marking the rows as not hidden. Fired only if the {@link Options#hiddenRows} option is enabled.
@@ -1533,7 +1533,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if provided row indexes are valid, `false` otherwise.
    * @returns {undefined|Boolean} If the callback returns `false`, the revealing action will not be completed.
    */
-  'beforeUnhideRows',
+  "beforeUnhideRows",
 
   /**
    * Fired by {@link HiddenRows} plugin after marking the rows as not hidden. Fired only if the {@link Options#hiddenRows} option is enabled.
@@ -1544,7 +1544,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if provided row indexes are valid, `false` otherwise.
    * @param {Boolean} stateChanged `true`, if the action affected any hidden rows, `false` otherwise.
    */
-  'afterUnhideRows',
+  "afterUnhideRows",
 
   /**
    * Fired by {@link HiddenColumns} plugin before marking the columns as hidden. Fired only if the {@link Options#hiddenColumns} option is enabled.
@@ -1556,7 +1556,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if the provided column indexes are valid, `false` otherwise.
    * @returns {undefined|Boolean} If the callback returns `false`, the hiding action will not be completed.
    */
-  'beforeHideColumns',
+  "beforeHideColumns",
 
   /**
    * Fired by {@link HiddenColumns} plugin after marking the columns as hidden. Fired only if the {@link Options#hiddenColumns} option is enabled.
@@ -1567,7 +1567,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if the provided column indexes are valid, `false` otherwise.
    * @param {Boolean} stateChanged `true`, if the action affected any non-hidden columns, `false` otherwise.
    */
-  'afterHideColumns',
+  "afterHideColumns",
 
   /**
    * Fired by {@link HiddenColumns} plugin before marking the columns as not hidden. Fired only if the {@link Options#hiddenColumns} option is enabled.
@@ -1579,7 +1579,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if the provided column indexes are valid, `false` otherwise.
    * @returns {undefined|Boolean} If the callback returns `false`, the hiding action will not be completed.
    */
-  'beforeUnhideColumns',
+  "beforeUnhideColumns",
 
   /**
    * Fired by {@link HiddenColumns} plugin after marking the columns as not hidden. Fired only if the {@link Options#hiddenColumns} option is enabled.
@@ -1590,7 +1590,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if the provided column indexes are valid, `false` otherwise.
    * @param {Boolean} stateChanged `true`, if the action affected any hidden columns, `false` otherwise.
    */
-  'afterUnhideColumns',
+  "afterUnhideColumns",
 
   /**
    * Fired by {@link TrimRows} plugin before trimming rows. This hook is fired when {@link Options#trimRows} option is enabled.
@@ -1601,7 +1601,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if all of the row indexes are withing the bounds of the table, `false` otherwise.
    * @returns {undefined|Boolean} If the callback returns `false`, the trimming action will not be completed.
    */
-  'beforeTrimRow',
+  "beforeTrimRow",
 
   /**
    * Fired by {@link TrimRows} plugin after trimming rows. This hook is fired when {@link Options#trimRows} option is enabled.
@@ -1613,7 +1613,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} stateChanged `true`, if the action affected any non-trimmed rows, `false` otherwise.
    * @returns {undefined|Boolean} If the callback returns `false`, the trimming action will not be completed.
    */
-  'afterTrimRow',
+  "afterTrimRow",
 
   /**
    * Fired by {@link TrimRows} plugin before untrimming rows. This hook is fired when {@link Options#trimRows} option is enabled.
@@ -1624,7 +1624,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if all of the row indexes are withing the bounds of the table, `false` otherwise.
    * @returns {undefined|Boolean} If the callback returns `false`, the untrimming action will not be completed.
    */
-  'beforeUntrimRow',
+  "beforeUntrimRow",
 
   /**
    * Fired by {@link TrimRows} plugin after untrimming rows. This hook is fired when {@link Options#trimRows} option is enabled.
@@ -1636,7 +1636,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} stateChanged `true`, if the action affected any trimmed rows, `false` otherwise.
    * @returns {undefined|Boolean} If the callback returns `false`, the untrimming action will not be completed.
    */
-  'afterUntrimRow',
+  "afterUntrimRow",
 
   /**
    * Fired by {@link DropdownMenu} plugin before opening the dropdown menu. This hook is fired when {@link Options#dropdownMenu}
@@ -1645,7 +1645,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#beforeDropdownMenuShow
    * @param {DropdownMenu} dropdownMenu The DropdownMenu instance.
    */
-  'beforeDropdownMenuShow',
+  "beforeDropdownMenuShow",
 
   /**
    * Fired by {@link DropdownMenu} plugin after opening the Dropdown Menu. This hook is fired when {@link Options#dropdownMenu}
@@ -1654,7 +1654,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterDropdownMenuShow
    * @param {DropdownMenu} dropdownMenu The DropdownMenu instance.
    */
-  'afterDropdownMenuShow',
+  "afterDropdownMenuShow",
 
   /**
    * Fired by {@link DropdownMenu} plugin after hiding the Dropdown Menu. This hook is fired when {@link Options#dropdownMenu}
@@ -1663,7 +1663,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#afterDropdownMenuHide
    * @param {DropdownMenu} instance The DropdownMenu instance.
    */
-  'afterDropdownMenuHide',
+  "afterDropdownMenuHide",
 
   /**
    * Fired by {@link HiddenRows} plugin to check whether the provided row index is hidden. This hook is fired when
@@ -1672,7 +1672,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#hiddenRow
    * @param {Number} row The visual row index in question.
    */
-  'hiddenRow',
+  "hiddenRow",
 
   /**
    * Fired by {@link HiddenColumns} plugin to check whether the provided column index is hidden. This hook is fired when
@@ -1681,7 +1681,7 @@ const REGISTERED_HOOKS = [
    * @event Hooks#hiddenColumn
    * @param {Number} column The visual column index in question.
    */
-  'hiddenColumn',
+  "hiddenColumn",
 
   /**
    * Fired by {@link NestedRows} plugin before adding a children to the NestedRows structure. This hook is fired when
@@ -1692,7 +1692,7 @@ const REGISTERED_HOOKS = [
    * @param {Object|undefined} element The element added as a child. If `undefined`, a blank child was added.
    * @param {Number|undefined} index The index within the parent where the new child was added. If `undefined`, the element was added as the last child.
    */
-  'beforeAddChild',
+  "beforeAddChild",
 
   /**
    * Fired by {@link NestedRows} plugin after adding a children to the NestedRows structure. This hook is fired when
@@ -1703,7 +1703,7 @@ const REGISTERED_HOOKS = [
    * @param {Object|undefined} element The element added as a child. If `undefined`, a blank child was added.
    * @param {Number|undefined} index The index within the parent where the new child was added. If `undefined`, the element was added as the last child.
    */
-  'afterAddChild',
+  "afterAddChild",
 
   /**
    * Fired by {@link NestedRows} plugin before detaching a child from its parent. This hook is fired when
@@ -1713,7 +1713,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} parent An object representing the parent from which the element is to be detached.
    * @param {Object} element The detached element.
    */
-  'beforeDetachChild',
+  "beforeDetachChild",
 
   /**
    * Fired by {@link NestedRows} plugin after detaching a child from its parent. This hook is fired when
@@ -1723,7 +1723,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} parent An object representing the parent from which the element was detached.
    * @param {Object} element The detached element.
    */
-  'afterDetachChild',
+  "afterDetachChild",
 
   /**
    * Fired after the editor is opened and rendered.
@@ -1732,7 +1732,7 @@ const REGISTERED_HOOKS = [
    * @param {Number} row Visual row index of the edited cell.
    * @param {Number} column Visual column index of the edited cell.
    */
-  'afterBeginEditing',
+  "afterBeginEditing",
 
   /**
    * Fired by {@link MergeCells} plugin before cell merging. This hook is fired when {@link Options#mergeCells}
@@ -1742,7 +1742,7 @@ const REGISTERED_HOOKS = [
    * @param {CellRange} cellRange Selection cell range.
    * @param {Boolean} [auto=false] `true` if called automatically by the plugin.
    */
-  'beforeMergeCells',
+  "beforeMergeCells",
 
   /**
    * Fired by {@link MergeCells} plugin after cell merging. This hook is fired when {@link Options#mergeCells}
@@ -1753,7 +1753,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} mergeParent The parent collection of the provided cell range.
    * @param {Boolean} [auto=false] `true` if called automatically by the plugin.
    */
-  'afterMergeCells',
+  "afterMergeCells",
 
   /**
    * Fired by {@link MergeCells} plugin before unmerging the cells. This hook is fired when {@link Options#mergeCells}
@@ -1763,7 +1763,7 @@ const REGISTERED_HOOKS = [
    * @param {CellRange} cellRange Selection cell range.
    * @param {Boolean} [auto=false] `true` if called automatically by the plugin.
    */
-  'beforeUnmergeCells',
+  "beforeUnmergeCells",
 
   /**
    * Fired by {@link MergeCells} plugin after unmerging the cells. This hook is fired when {@link Options#mergeCells}
@@ -1773,7 +1773,7 @@ const REGISTERED_HOOKS = [
    * @param {CellRange} cellRange Selection cell range.
    * @param {Boolean} [auto=false] `true` if called automatically by the plugin.
    */
-  'afterUnmergeCells',
+  "afterUnmergeCells",
 
   /**
    * Fired after the table was switched into listening mode. This allows Handsontable to capture keyboard events and
@@ -1781,7 +1781,7 @@ const REGISTERED_HOOKS = [
    *
    * @event Hooks#afterListen
    */
-  'afterListen',
+  "afterListen",
 
   /**
    * Fired after the table was switched off from the listening mode. This makes the Handsontable inert for any
@@ -1789,7 +1789,7 @@ const REGISTERED_HOOKS = [
    *
    * @event Hooks#afterUnlisten
    */
-  'afterUnlisten',
+  "afterUnlisten",
 
   /**
    * Fired after the window was resized.
@@ -1799,7 +1799,7 @@ const REGISTERED_HOOKS = [
    * @param {Object} currentDimensions Current dimensions of the container.
    * @param {Boolean} stateChanged `true`, if the container was re-render, `false` otherwise.
    */
-  'afterRefreshDimensions',
+  "afterRefreshDimensions",
 
   /**
    * Cancellable hook, called after resizing a window, but before redrawing a table.
@@ -1810,7 +1810,7 @@ const REGISTERED_HOOKS = [
    * @param {Boolean} actionPossible `true`, if current and previous dimensions are different, `false` otherwise.
    * @returns {undefined|Boolean} If the callback returns `false`, the refresh action will not be completed.
    */
-  'beforeRefreshDimensions',
+  "beforeRefreshDimensions"
 ];
 
 class Hooks {
@@ -1901,11 +1901,10 @@ class Hooks {
   add(key, callback, context = null) {
     if (Array.isArray(callback)) {
       arrayEach(callback, c => this.add(key, c, context));
-
     } else {
       const bucket = this.getBucket(context);
 
-      if (typeof bucket[key] === 'undefined') {
+      if (typeof bucket[key] === "undefined") {
         this.register(key);
         bucket[key] = [];
       }
@@ -1951,7 +1950,6 @@ class Hooks {
   once(key, callback, context = null) {
     if (Array.isArray(callback)) {
       arrayEach(callback, c => this.once(key, c, context));
-
     } else {
       callback.runOnce = true;
       this.add(key, callback, context);
@@ -1975,7 +1973,7 @@ class Hooks {
   remove(key, callback, context = null) {
     const bucket = this.getBucket(context);
 
-    if (typeof bucket[key] !== 'undefined') {
+    if (typeof bucket[key] !== "undefined") {
       if (bucket[key].indexOf(callback) >= 0) {
         callback.skip = true;
 
@@ -2022,7 +2020,12 @@ class Hooks {
    */
   run(context, key, p1, p2, p3, p4, p5, p6) {
     {
+      const getGlobalHandlerStart = performance.now();
       const globalHandlers = this.globalBucket[key];
+      window.getGlobalHandlerTotal =
+        (window.getGlobalHandlerTotal || 0) +
+        (performance.now() - getGlobalHandlerStart);
+
       const length = globalHandlers ? globalHandlers.length : 0;
       let index = 0;
 
@@ -2035,7 +2038,19 @@ class Hooks {
             continue;
           }
           // performance considerations - http://jsperf.com/call-vs-apply-for-a-plugin-architecture
-          const res = globalHandlers[index].call(context, p1, p2, p3, p4, p5, p6);
+          const callGlobalHandlerStart = performance.now();
+          const res = globalHandlers[index].call(
+            context,
+            p1,
+            p2,
+            p3,
+            p4,
+            p5,
+            p6
+          );
+          window.callGlobalHandlerTotal =
+            (window.callGlobalHandlerTotal || 0) +
+            (performance.now() - callGlobalHandlerStart);
 
           if (res !== void 0) {
             // eslint-disable-next-line no-param-reassign
@@ -2050,7 +2065,12 @@ class Hooks {
       }
     }
     {
+      const getLocalHandlerStart = performance.now();
       const localHandlers = this.getBucket(context)[key];
+      window.getLocalHandlerTotal =
+        (window.getLocalHandlerTotal || 0) +
+        (performance.now() - getLocalHandlerStart);
+
       const length = localHandlers ? localHandlers.length : 0;
       let index = 0;
 
@@ -2063,7 +2083,15 @@ class Hooks {
             continue;
           }
           // performance considerations - http://jsperf.com/call-vs-apply-for-a-plugin-architecture
-          const res = localHandlers[index].call(context, p1, p2, p3, p4, p5, p6);
+          const res = localHandlers[index].call(
+            context,
+            p1,
+            p2,
+            p3,
+            p4,
+            p5,
+            p6
+          );
 
           if (res !== void 0) {
             // eslint-disable-next-line no-param-reassign
@@ -2096,7 +2124,10 @@ class Hooks {
    */
   destroy(context = null) {
     // eslint-disable-next-line no-return-assign
-    objectEach(this.getBucket(context), (value, key, bucket) => (bucket[key].length = 0));
+    objectEach(
+      this.getBucket(context),
+      (value, key, bucket) => (bucket[key].length = 0)
+    );
   }
 
   /**
