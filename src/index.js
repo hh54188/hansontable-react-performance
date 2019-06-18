@@ -5,6 +5,9 @@ import { HotTable } from "../react-handsontable/src";
 
 import "handsontable/dist/handsontable.full.css";
 
+// const columnCount = 20;
+// const rowCount = 8000;
+
 const columnCount = 20;
 const rowCount = 1000;
 
@@ -38,6 +41,13 @@ function generateColumns() {
   return result;
 }
 
+// https://stackoverflow.com/questions/1069666/sorting-javascript-object-by-property-value
+function sortByObjectValue(list) {
+  return Object.keys(list).sort(function(a, b) {
+    return list[b] - list[a];
+  });
+}
+
 export default class HotApp extends React.Component {
   constructor(props) {
     super(props);
@@ -45,10 +55,18 @@ export default class HotApp extends React.Component {
       settings: {
         data: [["2019"]],
         columns: [{}],
-        afterOnCellMouseDown: (event, coords) => {},
-        afterOnCellMouseUp: (event, coords) => {},
-        afterFilter: filterConfig => {},
-        afterColumnSort: (currentSortConfig, destinationSortConfigs) => {}
+        afterOnCellMouseDown: (event, coords) => {
+          console.log("afterOnCellMouseDown");
+        },
+        afterOnCellMouseUp: (event, coords) => {
+          console.log("afterOnCellMouseUp");
+        },
+        afterFilter: filterConfig => {
+          console.log("afterFilter");
+        },
+        afterColumnSort: (currentSortConfig, destinationSortConfigs) => {
+          console.log("afterColumnSort");
+        }
       }
     };
   }
@@ -68,11 +86,23 @@ export default class HotApp extends React.Component {
       () => {
         console.table([
           ["render", performance.now() - startTime],
+          ["runFunctionInvokeCount", window.runFunctionInvokeCount],
+          [],
           ["getGlobalHandlerTotal", window.getGlobalHandlerTotal],
-          ["callGlobalHandlerTotal", window.callGlobalHandlerTotal],
+          [
+            "average get global handler time",
+            window.getGlobalHandlerTotal / window.runFunctionInvokeCount
+          ],
+          [],
           ["getLocalHandlerTotal", window.getLocalHandlerTotal],
-          ["runFunctionInvokeCount", window.runFunctionInvokeCount]
+          [
+            "average get local handler time",
+            window.getLocalHandlerTotal / window.runFunctionInvokeCount
+          ],
+          [],
+          ["callGlobalHandlerTotal", window.callGlobalHandlerTotal]
         ]);
+        console.log(sortByObjectValue(window.hookStatistics));
       }
     );
   };
