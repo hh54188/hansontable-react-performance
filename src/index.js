@@ -70,7 +70,8 @@ export default class HotApp extends React.Component {
           ["render", performance.now() - startTime],
           ["getGlobalHandlerTotal", window.getGlobalHandlerTotal],
           ["callGlobalHandlerTotal", window.callGlobalHandlerTotal],
-          ["getLocalHandlerTotal", window.getLocalHandlerTotal]
+          ["getLocalHandlerTotal", window.getLocalHandlerTotal],
+          ["runFunctionInvokeCount", window.runFunctionInvokeCount]
         ]);
       }
     );

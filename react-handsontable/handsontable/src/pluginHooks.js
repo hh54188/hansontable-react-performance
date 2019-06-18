@@ -2020,6 +2020,9 @@ class Hooks {
    */
   run(context, key, p1, p2, p3, p4, p5, p6) {
     {
+      window.runFunctionInvokeCount =
+        (window.runFunctionInvokeCount || 0) + 1;
+
       const getGlobalHandlerStart = performance.now();
       const globalHandlers = this.globalBucket[key];
       window.getGlobalHandlerTotal =
