@@ -84,7 +84,7 @@ class TableRenderer {
 
       // adjust column widths according to user widths settings
       this.renderColumnHeaders();
-
+      debugger
       // Render table rows
       this.renderRows(totalRows, rowsToRender, columnsToRender);
 
@@ -197,8 +197,8 @@ class TableRenderer {
       this.renderCells(sourceRowIndex, TR, columnsToRender);
 
       if (!isWorkingOnClone ||
-          // Necessary to refresh oversized row heights after editing cell in overlays
-          this.wot.isOverlayName(Overlay.CLONE_BOTTOM)) {
+        // Necessary to refresh oversized row heights after editing cell in overlays
+        this.wot.isOverlayName(Overlay.CLONE_BOTTOM)) {
         // Reset the oversized row cache for this row
         this.resetOversizedRow(sourceRowIndex);
       }
@@ -270,7 +270,7 @@ class TableRenderer {
       }
 
       if ((!previousRowHeight && this.instance.wtSettings.settings.defaultRowHeight < rowInnerHeight ||
-          previousRowHeight < rowInnerHeight)) {
+        previousRowHeight < rowInnerHeight)) {
         rowInnerHeight += 1;
         this.instance.wtViewport.oversizedRows[sourceRowIndex] = rowInnerHeight;
       }

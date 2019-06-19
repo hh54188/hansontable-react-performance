@@ -5,11 +5,11 @@ import { HotTable } from "../react-handsontable/src";
 
 import "handsontable/dist/handsontable.full.css";
 
-// const columnCount = 20;
-// const rowCount = 8000;
-
 const columnCount = 20;
-const rowCount = 1000;
+const rowCount = 8000;
+
+// const columnCount = 20;
+// const rowCount = 1000;
 
 // const columnCount = 50;
 // const rowCount = 10000;
@@ -33,7 +33,7 @@ function generateColumns() {
   const result = [];
   for (let i = 0; i < columnCount; i++) {
     result.push({
-      renderer: function(instance, td, row, col, prop, value, cellProperties) {
+      renderer: function (instance, td, row, col, prop, value, cellProperties) {
         return ReactDOM.render(<span>{value}</span>, td);
       }
     });
@@ -43,7 +43,7 @@ function generateColumns() {
 
 // https://stackoverflow.com/questions/1069666/sorting-javascript-object-by-property-value
 function sortByObjectValue(list) {
-  return Object.keys(list).sort(function(a, b) {
+  return Object.keys(list).sort(function (a, b) {
     return list[b] - list[a];
   });
 }
@@ -55,10 +55,15 @@ export default class HotApp extends React.Component {
       settings: {
         data: [["2019"]],
         columns: [{}],
-        autoColumnSize: true,
-        autoRowSize: true,
-        // rowHeights: 50,
-        // colWidths: 100,
+
+        // autoColumnSize: true,
+        // autoRowSize: true,
+
+        autoColumnSize: false,
+        autoRowSize: false,
+        rowHeights: 50,
+        colWidths: 100,
+
         afterOnCellMouseDown: (event, coords) => {
           console.log("afterOnCellMouseDown");
         },
@@ -76,12 +81,20 @@ export default class HotApp extends React.Component {
   }
   clickHandler = () => {
     const startTime = performance.now();
+
+    window.runFunctionInvokeCount = 0;
+    window.hookStatistics = {};
+    window.getGlobalHandlerTotal = 0;
+    window.callGlobalHandlerTotal = 0;
+    window.getLocalHandlerTotal = 0;
+    window.newColumnSettingsTotal = 0;
+
     this.setState(
       {
         settings: {
           ...this.state.settings,
           data: generateData(),
-          columns: generateColumns(),
+          columns: generateColumns()
         }
       },
       () => {
@@ -101,9 +114,13 @@ export default class HotApp extends React.Component {
             window.getLocalHandlerTotal / window.runFunctionInvokeCount
           ],
           [],
-          ["callGlobalHandlerTotal", window.callGlobalHandlerTotal]
+          ["callGlobalHandlerTotal", window.callGlobalHandlerTotal],
+          [],
+          ["newColumnSettingsTotal", window.newColumnSettingsTotal],
+          ["newColumnSettingsInvokeCount", window.newColumnSettingsInvokeCount],
+          ["average newColumnSettings time", window.newColumnSettingsTotal / window.newColumnSettingsInvokeCount]
         ]);
-        console.log(sortByObjectValue(window.hookStatistics));
+        console.log(window.hookStatistics, sortByObjectValue(window.hookStatistics));
       }
     );
   };

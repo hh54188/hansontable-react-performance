@@ -211,6 +211,7 @@ class AutoColumnSize extends BasePlugin {
     });
 
     if (this.ghostTable.columns.length) {
+      debugger
       this.ghostTable.getWidths((col, width) => {
         this.widths[col] = width;
       });

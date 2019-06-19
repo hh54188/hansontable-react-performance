@@ -236,7 +236,7 @@ function filterEmptyClassNames(classNames) {
 }
 
 if (isClassListSupported()) {
-  const isSupportMultipleClassesArg = function(rootDocument) {
+  const isSupportMultipleClassesArg = function (rootDocument) {
     const element = rootDocument.createElement('div');
 
     element.classList.add('test', 'test2');
@@ -244,7 +244,7 @@ if (isClassListSupported()) {
     return element.classList.contains('test2');
   };
 
-  _hasClass = function(element, className) {
+  _hasClass = function (element, className) {
     if (element.classList === void 0 || typeof className !== 'string' || className === '') {
       return false;
     }
@@ -252,7 +252,7 @@ if (isClassListSupported()) {
     return element.classList.contains(className);
   };
 
-  _addClass = function(element, classes) {
+  _addClass = function (element, classes) {
     const rootDocument = element.ownerDocument;
     let className = classes;
 
@@ -277,7 +277,7 @@ if (isClassListSupported()) {
     }
   };
 
-  _removeClass = function(element, classes) {
+  _removeClass = function (element, classes) {
     let className = classes;
 
     if (typeof className === 'string') {
@@ -302,16 +302,16 @@ if (isClassListSupported()) {
   };
 
 } else {
-  const createClassNameRegExp = function(className) {
+  const createClassNameRegExp = function (className) {
     return new RegExp(`(\\s|^)${className}(\\s|$)`);
   };
 
-  _hasClass = function(element, className) {
+  _hasClass = function (element, className) {
     // http://snipplr.com/view/3561/addclass-removeclass-hasclass/
     return element.className !== void 0 && createClassNameRegExp(className).test(element.className);
   };
 
-  _addClass = function(element, classes) {
+  _addClass = function (element, classes) {
     let len = 0;
     let _className = element.className;
     let className = classes;
@@ -333,7 +333,7 @@ if (isClassListSupported()) {
     element.className = _className;
   };
 
-  _removeClass = function(element, classes) {
+  _removeClass = function (element, classes) {
     let len = 0;
     let _className = element.className;
     let className = classes;

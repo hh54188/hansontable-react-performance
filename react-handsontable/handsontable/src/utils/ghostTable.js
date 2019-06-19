@@ -142,7 +142,6 @@ class GhostTable {
     }
     arrayEach(this.rows, (row) => {
       // -1 <- reduce border-top from table
-      debugger
       callback(row.row, outerHeight(row.table) - 1);
     });
   }

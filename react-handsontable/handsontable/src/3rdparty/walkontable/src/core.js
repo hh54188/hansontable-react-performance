@@ -56,7 +56,7 @@ class Walkontable {
       }
       if (!this.getSetting('columnHeaders').length) {
         this.update('columnHeaders', [
-          function(column, TH) {
+          function (column, TH) {
             fastInnerText(TH, originalHeaders[column]);
           }
         ]);
