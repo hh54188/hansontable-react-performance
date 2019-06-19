@@ -55,6 +55,10 @@ export default class HotApp extends React.Component {
       settings: {
         data: [["2019"]],
         columns: [{}],
+        autoColumnSize: true,
+        autoRowSize: true,
+        // rowHeights: 50,
+        // colWidths: 100,
         afterOnCellMouseDown: (event, coords) => {
           console.log("afterOnCellMouseDown");
         },
@@ -78,9 +82,6 @@ export default class HotApp extends React.Component {
           ...this.state.settings,
           data: generateData(),
           columns: generateColumns(),
-          autoColumnSize: false,
-          rowHeights: 50,
-          colWidths: 100
         }
       },
       () => {
