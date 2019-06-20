@@ -84,7 +84,7 @@ class TableRenderer {
 
       // adjust column widths according to user widths settings
       this.renderColumnHeaders();
-      debugger
+      // debugger
       // Render table rows
       this.renderRows(totalRows, rowsToRender, columnsToRender);
 

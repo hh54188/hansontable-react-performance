@@ -145,6 +145,7 @@ class AutoColumnSize extends BasePlugin {
    * @returns {Boolean}
    */
   isEnabled() {
+    // debugger
     return this.hot.getSettings().autoColumnSize !== false && !this.hot.getSettings().colWidths;
   }
 
@@ -155,7 +156,7 @@ class AutoColumnSize extends BasePlugin {
     if (this.enabled) {
       return;
     }
-    debugger
+    // debugger
     const setting = this.hot.getSettings().autoColumnSize;
 
     if (setting && setting.useHeaders !== null && setting.useHeaders !== void 0) {
@@ -211,7 +212,7 @@ class AutoColumnSize extends BasePlugin {
     });
 
     if (this.ghostTable.columns.length) {
-      debugger
+      // debugger
       this.ghostTable.getWidths((col, width) => {
         this.widths[col] = width;
       });
