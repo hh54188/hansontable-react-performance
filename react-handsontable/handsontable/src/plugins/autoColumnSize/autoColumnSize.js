@@ -155,7 +155,7 @@ class AutoColumnSize extends BasePlugin {
     if (this.enabled) {
       return;
     }
-
+    debugger
     const setting = this.hot.getSettings().autoColumnSize;
 
     if (setting && setting.useHeaders !== null && setting.useHeaders !== void 0) {

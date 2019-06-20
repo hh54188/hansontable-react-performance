@@ -150,9 +150,6 @@ class Settings {
    * @returns {*}
    */
   getSetting(key, param1, param2, param3, param4) {
-    if (key === 'beforeDraw') {
-      debugger
-    }
     if (typeof this.settings[key] === 'function') {
       // this is faster than .apply - https://github.com/handsontable/handsontable/wiki/JavaScript-&-DOM-performance-tips
       return this.settings[key](param1, param2, param3, param4);

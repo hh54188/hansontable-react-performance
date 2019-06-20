@@ -59,10 +59,10 @@ export default class HotApp extends React.Component {
         // autoColumnSize: true,
         // autoRowSize: true,
 
-        autoColumnSize: false,
-        autoRowSize: false,
-        rowHeights: 50,
-        colWidths: 100,
+        // autoColumnSize: false,
+        // autoRowSize: false,
+        // rowHeights: 50,
+        // colWidths: 100,
 
         afterOnCellMouseDown: (event, coords) => {
           console.log("afterOnCellMouseDown");
