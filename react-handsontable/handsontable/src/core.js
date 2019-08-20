@@ -1565,6 +1565,7 @@ export default function Core(rootElement, userSettings, rootInstanceSymbol = fal
     if (priv.firstRun) {
       priv.firstRun = [null, 'loadData'];
     } else {
+      console.log('LOAD DATA RENDER');
       instance.runHooks('afterChange', null, 'loadData');
       instance.render();
     }
@@ -1670,6 +1671,7 @@ export default function Core(rootElement, userSettings, rootInstanceSymbol = fal
    * @fires Hooks#afterUpdateSettings
    */
   this.updateSettings = function (settings, init = false) {
+    console.log("UPDATE SETTINGS");
     let columnsAsFunc = false;
     let i;
     let j;

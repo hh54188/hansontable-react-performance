@@ -7,7 +7,7 @@ import faker from 'faker'
 import "handsontable/dist/handsontable.full.css";
 
 const columnCount = 20;
-const rowCount = 10000;
+const rowCount = 100000;
 
 function generateData() {
   const data = [];
@@ -41,29 +41,40 @@ function sortByObjectValue(list) {
   });
 }
 
+class HotTableWrapper extends React.Component {
+  componentDidUpdate() {
+    // console.log('HOTTABLEWRAPPER DID UPDATE');
+  }
+  render() {
+    console.log("HOTTABLEWRAPPER RENDER")
+    return (
+      <HotTable
+        ref={this.props.tableRef}
+        data={this.props.data}
+        columns={this.props.columns}
+        autoColumnSize={false}
+        autoRowSize={false}
+        rowHeights={50}
+        colWidths={100}
+        filters={true}
+        width={this.props.width}
+        height={this.props.height}
+      ></HotTable>
+    )
+
+  }
+}
+
 export default class HotApp extends React.Component {
   constructor(props) {
     super(props);
     this.tableRef = React.createRef();
     this.state = {
       settings: {
-        data: [["2019"]],
-        columns: [{}],
-
-        // autoColumnSize: true,
-        // autoRowSize: true,
-
-        autoColumnSize: false,
-        autoRowSize: false,
-
-        rowHeights: 50,
-        colWidths: 100,
-        
-        filters: true,
-
-        width: parseInt(window.innerWidth),
-        height: parseInt(window.innerHeight),
-      } };
+        data: [],
+        columns: [],
+      }
+    };
   }
 
   get filterPlugin() {
@@ -81,9 +92,13 @@ export default class HotApp extends React.Component {
           ...this.state.settings,
           data: generateData(),
           columns: generateColumns()
-        }
+        },
+        useless: Math.random()
       },
       () => {
+        console.log("SORT BEGIN");
+        this.sortHandler();
+        // this.filterHandler();
       }
     );
   };
@@ -102,14 +117,26 @@ export default class HotApp extends React.Component {
     this.filterPlugin.filter()
     console.log("Filter Cost------>", +new Date - filterStart);
   }
+  randomUselessValue = () => {
+    this.setState({
+      useless: Math.random(),
+    })
+  }
   render() {
-    const { settings } = this.state;
     return (
       <div>
         <button onClick={this.clickHandler}>Random Data</button>
         <button onClick={this.sortHandler}>Sort Data</button>
         <button onClick={this.filterHandler}>Filter Data</button>
-        <HotTable ref={this.tableRef} settings={settings} />
+        <button onClick={this.randomUselessValue}>Random Useless</button>
+        <HotTableWrapper
+          useless={this.state.useless}
+          tableRef={this.tableRef}
+          data={this.state.settings.data}
+          columns={this.state.settings.columns}
+          width={window.innerWidth}
+          height={window.innerHeights}
+        ></HotTableWrapper>
       </div>
     );
   }
