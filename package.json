@@ -5,6 +5,7 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/runtime": "^7.4.4",
     "@handsontable/react": "^3.0.0",
+    "faker": "^4.1.0",
     "handsontable": "^7.0.3",
     "lodash": "^4.17.11",
     "react": "^16.8.6",

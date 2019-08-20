@@ -2019,16 +2019,16 @@ class Hooks {
    * ```
    */
   run(context, key, p1, p2, p3, p4, p5, p6) {
-    window.runFunctionInvokeCount = (window.runFunctionInvokeCount || 0) + 1;
+    // window.runFunctionInvokeCount = (window.runFunctionInvokeCount || 0) + 1;
 
-    window.hookStatistics = window.hookStatistics || {};
-    window.hookStatistics[key] = (window.hookStatistics[key] || 0) + 1;
+    // window.hookStatistics = window.hookStatistics || {};
+    // window.hookStatistics[key] = (window.hookStatistics[key] || 0) + 1;
     {
-      const getGlobalHandlerStart = performance.now();
+      // const getGlobalHandlerStart = performance.now();
       const globalHandlers = this.globalBucket[key];
-      window.getGlobalHandlerTotal =
-        (window.getGlobalHandlerTotal || 0) +
-        (performance.now() - getGlobalHandlerStart);
+      // window.getGlobalHandlerTotal =
+      //   (window.getGlobalHandlerTotal || 0) +
+      //   (performance.now() - getGlobalHandlerStart);
 
       const length = globalHandlers ? globalHandlers.length : 0;
       let index = 0;
@@ -2042,7 +2042,7 @@ class Hooks {
             continue;
           }
           // performance considerations - http://jsperf.com/call-vs-apply-for-a-plugin-architecture
-          const callGlobalHandlerStart = performance.now();
+          // const callGlobalHandlerStart = performance.now();
           const res = globalHandlers[index].call(
             context,
             p1,
@@ -2052,9 +2052,9 @@ class Hooks {
             p5,
             p6
           );
-          window.callGlobalHandlerTotal =
-            (window.callGlobalHandlerTotal || 0) +
-            (performance.now() - callGlobalHandlerStart);
+          // window.callGlobalHandlerTotal =
+          //   (window.callGlobalHandlerTotal || 0) +
+          //   (performance.now() - callGlobalHandlerStart);
 
           if (res !== void 0) {
             // eslint-disable-next-line no-param-reassign
@@ -2069,11 +2069,11 @@ class Hooks {
       }
     }
     {
-      const getLocalHandlerStart = performance.now();
+      // const getLocalHandlerStart = performance.now();
       const localHandlers = this.getBucket(context)[key];
-      window.getLocalHandlerTotal =
-        (window.getLocalHandlerTotal || 0) +
-        (performance.now() - getLocalHandlerStart);
+      // window.getLocalHandlerTotal =
+      //   (window.getLocalHandlerTotal || 0) +
+      //   (performance.now() - getLocalHandlerStart);
 
       const length = localHandlers ? localHandlers.length : 0;
       let index = 0;
