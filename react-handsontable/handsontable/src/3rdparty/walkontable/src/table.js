@@ -203,6 +203,7 @@ class Table {
    * @returns {Table}
    */
   draw(fastDraw) {
+    console.log("TABLE DRAW");
     const { wot } = this;
     const { wtOverlays, wtViewport } = wot;
     const totalRows = this.instance.getSetting('totalRows');
@@ -250,11 +251,11 @@ class Table {
       let startRow;
 
       if (Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_DEBUG) ||
-          Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_TOP) ||
-          Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_TOP_LEFT_CORNER)) {
+        Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_TOP) ||
+        Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_TOP_LEFT_CORNER)) {
         startRow = 0;
       } else if (Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_BOTTOM) ||
-          Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_BOTTOM_LEFT_CORNER)) {
+        Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_BOTTOM_LEFT_CORNER)) {
         startRow = Math.max(totalRows - wot.getSetting('fixedRowsBottom'), 0);
       } else {
         startRow = wtViewport.rowsRenderCalculator.startRow;
@@ -262,9 +263,9 @@ class Table {
       let startColumn;
 
       if (Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_DEBUG) ||
-          Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_LEFT) ||
-          Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_TOP_LEFT_CORNER) ||
-          Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_BOTTOM_LEFT_CORNER)) {
+        Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_LEFT) ||
+        Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_TOP_LEFT_CORNER) ||
+        Overlay.isOverlayTypeOf(cloneOverlay, Overlay.CLONE_BOTTOM_LEFT_CORNER)) {
         startColumn = 0;
       } else {
         startColumn = wtViewport.columnsRenderCalculator.startColumn;
@@ -600,8 +601,8 @@ class Table {
       columnsCount = totalColumns;
 
     } else if (wot.isOverlayName(Overlay.CLONE_LEFT) ||
-               wot.isOverlayName(Overlay.CLONE_TOP_LEFT_CORNER) ||
-               wot.isOverlayName(Overlay.CLONE_BOTTOM_LEFT_CORNER)) {
+      wot.isOverlayName(Overlay.CLONE_TOP_LEFT_CORNER) ||
+      wot.isOverlayName(Overlay.CLONE_BOTTOM_LEFT_CORNER)) {
       return Math.min(wot.getSetting('fixedColumnsLeft'), totalColumns);
 
     }
@@ -618,11 +619,11 @@ class Table {
       rowsCount = totalRows;
 
     } else if (wot.isOverlayName(Overlay.CLONE_TOP) ||
-               wot.isOverlayName(Overlay.CLONE_TOP_LEFT_CORNER)) {
+      wot.isOverlayName(Overlay.CLONE_TOP_LEFT_CORNER)) {
       rowsCount = Math.min(wot.getSetting('fixedRowsTop'), totalRows);
 
     } else if (wot.isOverlayName(Overlay.CLONE_BOTTOM) ||
-               wot.isOverlayName(Overlay.CLONE_BOTTOM_LEFT_CORNER)) {
+      wot.isOverlayName(Overlay.CLONE_BOTTOM_LEFT_CORNER)) {
       rowsCount = Math.min(wot.getSetting('fixedRowsBottom'), totalRows);
     }
 

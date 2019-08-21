@@ -116,6 +116,7 @@ class TableView {
    * Renders WalkontableUI.
    */
   render() {
+    console.log("TABLEVIEW RENDER");
     this.wt.draw(!this.instance.forceFullRender);
     this.instance.forceFullRender = false;
     this.instance.renderCall = false;

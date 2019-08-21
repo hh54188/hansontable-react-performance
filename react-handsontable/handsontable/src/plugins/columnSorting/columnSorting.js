@@ -210,6 +210,8 @@ class ColumnSorting extends BasePlugin {
    * @fires Hooks#afterColumnSort
    */
   sort(sortConfig) {
+    console.log("COLUMN SORT BEGIN");
+    debugger
     const currentSortConfig = this.getSortConfig();
 
     // We always pass configs defined as an array to `beforeColumnSort` and `afterColumnSort` hooks.
@@ -230,7 +232,6 @@ class ColumnSorting extends BasePlugin {
       this.columnStatesManager.setSortStates(internalSortStates);
       this.sortByPresetSortStates();
       this.saveAllSortSettings();
-
       this.hot.render();
       this.hot.view.wt.draw(true); // TODO: Workaround? One test won't pass after removal. It should be refactored / described.
     }

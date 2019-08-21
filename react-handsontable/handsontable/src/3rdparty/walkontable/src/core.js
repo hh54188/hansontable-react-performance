@@ -75,6 +75,7 @@ class Walkontable {
    * @returns {Walkontable}
    */
   draw(fastDraw = false) {
+    console.log("WALKONTABLE DRAW");
     this.drawInterrupted = false;
 
     if (!fastDraw && !isVisible(this.wtTable.TABLE)) {
