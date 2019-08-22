@@ -42,6 +42,9 @@ function sortByObjectValue(list) {
 }
 
 class HotTableWrapper extends React.Component {
+  getDerivedStateFromProps() {
+    console.log('HOTTABLEWRAPPER GETDERIVEDSTATEFROMPROPS');
+  }
   componentDidUpdate() {
     // console.log('HOTTABLEWRAPPER DID UPDATE');
   }
@@ -60,6 +63,9 @@ class HotTableWrapper extends React.Component {
         width={this.props.width}
         height={this.props.height}
         columnSorting={true}
+        afterUpdateSettings={() => {
+          console.log('afterUpdateSettings');
+        }}
       ></HotTable>
     )
 
@@ -97,8 +103,8 @@ export default class HotApp extends React.Component {
         useless: Math.random()
       },
       () => {
-        console.log("SORT BEGIN");
-        this.sortHandler();
+        // console.log("SORT BEGIN");
+        // this.sortHandler();
         // this.filterHandler();
       }
     );

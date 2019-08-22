@@ -46,7 +46,7 @@ class TableRenderer {
    *
    */
   render() {
-    console.log("--------------->TABLE RENDERER RENDER<---------------")
+    console.log("TABLE RENDERER RENDER")
     if (!this.wtTable.isWorkingOnClone()) {
       const skipRender = {};
       this.wot.getSetting('beforeDraw', true, skipRender);
@@ -85,7 +85,6 @@ class TableRenderer {
 
       // adjust column widths according to user widths settings
       this.renderColumnHeaders();
-      // debugger
       // Render table rows
       this.renderRows(totalRows, rowsToRender, columnsToRender);
 
@@ -173,7 +172,7 @@ class TableRenderer {
    * @param {Number} columnsToRender
    */
   renderRows(totalRows, rowsToRender, columnsToRender) {
-    console.log("renderRows");
+    console.log("------------->renderRows<--------------");
     let TR;
     let visibleRowIndex = 0;
     let sourceRowIndex = this.rowFilter.renderedToSource(visibleRowIndex);

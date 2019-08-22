@@ -211,7 +211,6 @@ class ColumnSorting extends BasePlugin {
    */
   sort(sortConfig) {
     console.log("COLUMN SORT BEGIN");
-    debugger
     const currentSortConfig = this.getSortConfig();
 
     // We always pass configs defined as an array to `beforeColumnSort` and `afterColumnSort` hooks.
