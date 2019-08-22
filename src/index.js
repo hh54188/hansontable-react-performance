@@ -7,7 +7,7 @@ import faker from 'faker'
 import "handsontable/dist/handsontable.full.css";
 
 const columnCount = 20;
-const rowCount = 100000;
+const rowCount = 30000;
 
 function generateData() {
   const data = [];
@@ -15,7 +15,12 @@ function generateData() {
   for (let i = 0; i < rowCount; i++) {
     data[i] = [];
     for (let j = 0; j < columnCount; j++) {
-      data[i].push(faker.name.findName());
+      if (j === 1) {
+        data[i].push(Math.random());
+      }
+      else {
+        data[i].push(faker.name.findName());
+      }
     }
   }
   return data;
@@ -59,6 +64,10 @@ class HotTableWrapper extends React.Component {
         filters={true}
         width={this.props.width}
         height={this.props.height}
+        columnSorting={true}
+        afterRender={() => {
+          console.log('After table renderer');
+        }}
       ></HotTable>
     )
 
@@ -96,8 +105,10 @@ export default class HotApp extends React.Component {
         useless: Math.random()
       },
       () => {
-        console.log("SORT BEGIN");
-        this.sortHandler();
+        setTimeout(() => {
+          console.log("SORT BEGIN");
+          this.sortHandler();
+        }, 1000 * 2)
         // this.filterHandler();
       }
     );
@@ -105,7 +116,7 @@ export default class HotApp extends React.Component {
   sortHandler = () => {
     const sortStart = +new Date;
     this.sortPlugin.clearSort();
-    this.sortPlugin.sort({ column: 1, sortOrder: 'desc' });
+    this.sortPlugin.sort({ column: 1, sortOrder: 'asc' });
     console.log("Sort Cost------>", +new Date - sortStart);
   }
   filterHandler = () => {
