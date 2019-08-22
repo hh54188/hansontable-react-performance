@@ -1451,6 +1451,7 @@ export default function Core(rootElement, userSettings, rootInstanceSymbol = fal
    * @function render
    */
   this.render = function () {
+    console.log("CORE RENDER")
     if (instance.view) {
       instance.renderCall = true;
       instance.forceFullRender = true; // used when data was changed
@@ -1671,7 +1672,7 @@ export default function Core(rootElement, userSettings, rootInstanceSymbol = fal
    * @fires Hooks#afterUpdateSettings
    */
   this.updateSettings = function (settings, init = false) {
-    console.log("UPDATE SETTINGS");
+    console.log("================UPDATE SETTINGS===============");
     let columnsAsFunc = false;
     let i;
     let j;
